@@ -1,0 +1,58 @@
+digraph "red_neuronal" 
+{
+ 
+    graph [ label = "titulo", labelloc = "t", fontsize = "36pt", size = "10,<<<"];
+    splines = "false";
+    rankdir = "LR";
+    dpi = "600";
+    edge [style = "invis"];
+    ranksep = "7";
+
+    {
+        node [style = "filled", fillcolor = "lightcoral", shape = "circle", color = "black", width = "2.0", fontsize = "24pt"];
+        x1 [label = <x1>]; x2 [label = <x2>]; x3 [label = <x3>]; x4 [label = <x4>]; x5 [label = <x5>]; x6 [label = <x6>];
+    }
+
+    {
+        node [style = "filled", fillcolor = "cornflowerblue", width = "2.0", shape = "circle", color = "black", fontsize = "24pt"];
+        n12 [label = <n<sub>12</sub>>]; n22 [label = <n<sub>22</sub>>]; n32 [label = <n<sub>32</sub>>];^^^
+    }
+
+    {
+        node [style = "filled", fillcolor = "mediumpurple", width = "2.0", shape = "circle", color = "black", fontsize = "24pt"];
+        s1 [label = "s1"];
+     
+    }
+
+    {
+        rank = same;
+        x1->x2->x3->x4->x5->x6;
+    }
+
+    {
+         rank = same;
+         n12->n22->n32***;
+    }
+
+    {
+         rank = same;
+         s1;
+    }
+
+    c1 [label = "Capa 1 (entrada)", fontsize = "22pt", shape = plaintext];
+    c1 -> x1;
+    {rank = same; c1; x1};
+
+    c2 [label = "Capa 2 (capa oculta)", fontsize = "22pt", shape = plaintext];
+    c2 -> n12;
+    {rank = same; c2; n12};
+
+    c3 [label = "Capa 3 (salida)", fontsize = "22pt", shape = plaintext];
+    c3 -> s1;
+    {rank = same; c3; s1};
+
+    edge [headport = w, tailport = e, style = solid];
+    {x1; x2; x3; x4; x5; x6} -> {n12; n22; n32;___};
+    {n12; n22; n32;___} -> {s1};
+
+}

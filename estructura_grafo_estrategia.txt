@@ -1,0 +1,12 @@
+digraph {
+    rankdir = "LR";
+    graph [pad = "1.0", ranksep = "3.0", nodesep = "1.0", fontsize = 24];
+    node [margin = "0", fontcolor = "dodgerblue4", height = "1.0", fontsize = 24, shape = "rectangle", style = "filled,rounded", fillcolor = "aliceblue"]
+    edge [arrowhead = "vee"];
+    
+    a [label = "___", fontsize = "24pt"];
+    b [label = "***", fontsize = "24pt"];
+    c [label = "   victoria   ", fontsize = "24pt"];
+    a -> b;
+    b -> c;
+}
